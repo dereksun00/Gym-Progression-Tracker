@@ -34,7 +34,6 @@ Follow these steps to set up a local copy of the project.
 
 ### Prerequisites
 - Python 3.8+  
-- Matplotlib (`pip install matplotlib`)  
 - Tkinter (included by default)  
 
 ### Installation
