@@ -1,87 +1,9 @@
 import json
 import csv
 from datetime import date
-from datetime import datetime
-import matplotlib.pyplot as plt
 
 PROGRAM_FILE = "program.json"
 WORKOUT_FILE = "workouts.csv"
-
-def show_progress_chart():
-    """Plot weight and reps over time for a chosen exercise (dual y-axes)."""
-    # Load rows
-    try:
-        with open(WORKOUT_FILE, "r", newline="") as f:
-            reader = csv.reader(f)
-            rows = [row for row in reader if row]
-    except FileNotFoundError:
-        print("No workout data found.\n")
-        return
-
-    if not rows:
-        print("No workouts logged yet.\n")
-        return
-
-    # Detect/skip header if present
-    expected_header = ["date", "day", "exercise", "weight", "reps"]
-    has_header = len(rows[0]) >= 5 and [c.strip().lower() for c in rows[0][:5]] == expected_header
-    data_rows = rows[1:] if has_header else rows
-
-    if not data_rows:
-        print("No workouts logged yet.\n")
-        return
-
-    # Ask which exercise to chart
-    exercise_name = input("Enter exercise name to view progress: ").strip().title()
-
-    # Collect data
-    dates, weights, reps_list = [], [], []
-    for row in data_rows:
-        if len(row) < 5:
-            continue
-        date_str, _, exercise, weight_str, reps_str = row
-        if exercise.strip().title() != exercise_name:
-            continue
-        try:
-            dt = datetime.strptime(date_str.strip(), "%Y-%m-%d")
-            w = float(weight_str)
-            r = int(reps_str)
-        except (ValueError, TypeError):
-            continue
-        dates.append(dt)
-        weights.append(w)
-        reps_list.append(r)
-
-    if not dates:
-        print(f"No logs found for '{exercise_name}'.\n")
-        return
-
-    # Sort by date
-    combined = sorted(zip(dates, weights, reps_list), key=lambda x: x[0])
-    dates, weights, reps_list = zip(*combined)
-
-    # Plot with dual axes
-    fig, ax_w = plt.subplots(figsize=(8, 4.5))
-
-    # Weight (left axis)
-    ax_w.plot(dates, weights, marker="o", linestyle="-", label="Weight (lbs)")
-    ax_w.set_xlabel("Date")
-    ax_w.set_ylabel("Weight (lbs)")
-    ax_w.grid(True, which="both", linestyle="--", alpha=0.4)
-
-    # Reps (right axis)
-    ax_r = ax_w.twinx()
-    ax_r.plot(dates, reps_list, marker="s", linestyle="-", label="Reps")
-    ax_r.set_ylabel("Reps")
-
-    # Build a combined legend
-    lines_left, labels_left = ax_w.get_legend_handles_labels()
-    lines_right, labels_right = ax_r.get_legend_handles_labels()
-    ax_w.legend(lines_left + lines_right, labels_left + labels_right, loc="best")
-
-    plt.title(f"{exercise_name}: Weight & Reps Over Time")
-    plt.tight_layout()
-    plt.show()
 
 def load_program():
     try:
@@ -273,9 +195,7 @@ def main():
         print("4. View Log")
         print("5. Remove Log Entry")
         print("6. Remove Exercise")
-        print("7. View Progress Chart")
-        print("8. Exit")
-
+        print("7. Exit")
         choice = input("> ")
 
         if choice == "1":
@@ -291,8 +211,6 @@ def main():
         elif choice == "6":
             remove_exercise_from_program(program)
         elif choice == "7":
-            show_progress_chart()
-        elif choice == "8":
             break
         else:
             print("Invalid choice.\n")
