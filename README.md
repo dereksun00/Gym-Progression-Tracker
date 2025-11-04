@@ -61,8 +61,7 @@ Follow these steps to set up a local copy of the project.
    4. View Log
    5. Remove Log Entry
    6. Remove Exercise
-   7. View Progress Chart
-   8. Exit
+   7. Exit
 
 - Follow on-screen prompts to add or log workouts.
 - Logs are saved in workouts.csv and program.json.
