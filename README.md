@@ -22,8 +22,7 @@ Data is stored locally using **CSV** and **JSON**, ensuring persistence across s
 ## Built With
 
 - [Python 3.x](https://www.python.org/)
-- [Tkinter](https://docs.python.org/3/library/tkinter.html)
-- [Matplotlib](https://matplotlib.org/)
+- [Tkinter](https://docs.python.org/3/library/tkinter.html) *(optional; GUI under development)*
 - [CSV / JSON](https://docs.python.org/3/library/csv.html)
 
 ---
@@ -34,7 +33,8 @@ Follow these steps to set up a local copy of the project.
 
 ### Prerequisites
 - Python 3.8+  
-- Tkinter (included by default)  
+- Tkinter (included by default)
+- Command-line access (Windows CMD, macOS Terminal, etc.)
 
 ### Installation
 
