@@ -1,21 +1,21 @@
 # 🏋️‍♂️ Gym Progression Tracker
-A lightweight Python desktop app for tracking and analyzing workout progress.
-
+A Python-based workout tracker for logging and visualizing strength training progress.  
+Features a simple console interface and optional Tkinter-based visualization.
 
 ---
 
 ## About The Project
 
-Tracking workout progress helps turn effort into results. The **Gym Progression Tracker** is a simple, efficient desktop app built with **Python** and **Tkinter** that allows users to log, edit, and delete workouts — while saving data automatically with **CSV** and **JSON** persistence.
-
-The project aims to make performance tracking quick and intuitive without the need for complicated spreadsheets or online platforms.
+The **Gym Progression Tracker** helps users log their workouts, review progress, and visualize strength improvements.  
+It offers a menu-based console interface and an optional Tkinter GUI for future extension.  
+Data is stored locally using **CSV** and **JSON**, ensuring persistence across sessions.
 
 ### Key Features
-- **Workout Logging:** Add, edit, and delete exercises with sets, reps, and weight.
-- **Persistent Storage:** Automatically saves data between sessions using CSV/JSON.
-- **User-Friendly GUI:** Built with Tkinter for simple, responsive interaction.
-- **Error Handling:** Input validation and duplicate prevention.
-- **Scalable Design:** Easily handles 100+ entries with consistent performance.
+- **Workout Logging:** Record exercise, sets, reps, and weight through an interactive menu.  
+- **Progress Visualization:** View dual-axis charts of reps and weights over time (Matplotlib).  
+- **Persistent Storage:** Data saved automatically in CSV and JSON.  
+- **Simple CLI:** Lightweight, easy-to-navigate interface.  
+- **Extensible Design:** Modular structure with GUI support via `gui_tracker.py`.
 
 ---
 
@@ -23,6 +23,7 @@ The project aims to make performance tracking quick and intuitive without the ne
 
 - [Python 3.x](https://www.python.org/)
 - [Tkinter](https://docs.python.org/3/library/tkinter.html)
+- [Matplotlib](https://matplotlib.org/)
 - [CSV / JSON](https://docs.python.org/3/library/csv.html)
 
 ---
@@ -33,8 +34,8 @@ Follow these steps to set up a local copy of the project.
 
 ### Prerequisites
 - Python 3.8+  
-- Tkinter (included by default with most Python distributions)
-- Command-line access (Windows CMD, macOS Terminal, etc.)
+- Matplotlib (`pip install matplotlib`)  
+- Tkinter (included by default)  
 
 ### Installation
 
@@ -52,21 +53,21 @@ Follow these steps to set up a local copy of the project.
 ## Usage
 
 1. Launch the app:
+   Once you launch the program, you'll see a console menu.
    ```bash
-   python main.py
+   ---- Gym Tracker ----
+   1. View Program
+   2. Add Exercise(s)
+   3. Log Workout
+   4. View Log
+   5. Remove Log Entry
+   6. Remove Exercise
+   7. View Progress Chart
+   8. Exit
 
-2. Add a workout entry by entering:
-
-- Exercise name
-- Sets, reps, and weight
-
-3. Click Add Entry to log it.
-
-4. Use Edit or Delete to modify existing entries.
-
-5. Data saves automatically and reloads when reopening the app.
-
-All entries are stored in simple, human-readable CSV/JSON files for long-term tracking.
+- Follow on-screen prompts to add or log workouts.
+- Logs are saved in workouts.csv and program.json.
+- Select “View Progress Chart” to visualize your data.
 
 ---
 
