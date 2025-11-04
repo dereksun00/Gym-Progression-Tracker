@@ -1,0 +1,24 @@
+{
+  "Push": [
+    "Bench Press",
+    "Shoulder Press",
+    "Lateral Raises",
+    "Tricep Pushdown",
+    "Tricep Extension",
+    "Chest Fly"
+  ],
+  "Pull": [
+    "Preacher Curl",
+    "Hammer Curl",
+    "Lat Pulldown",
+    "Single Arm Cable Row",
+    "Forearm Curls",
+    "Tbar Row"
+  ],
+  "Legs": [
+    "Squat",
+    "Leg Extension",
+    "Leg Curls",
+    "Calf Raise"
+  ]
+}
